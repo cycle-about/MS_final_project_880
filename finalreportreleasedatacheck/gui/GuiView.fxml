@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:id="gridPane"
+          xmlns="http://javafx.com/javafx/8.0.192"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="edu.jhu.jhg.finalreportreleasedatacheck.gui.GuiController"
+          alignment="center" hgap="20" vgap="25">
+    <padding><Insets top="20" right="35" bottom="20" left="35"/></padding>
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="0" spacing="15">
+        <Label text="Select Report Type: "/>
+        <RadioButton fx:id="releaseReport" text="Release Final Report"/>
+        <RadioButton fx:id="verifyId" text="VerifyId"/>
+    </HBox>
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="15">
+        <Label text="Select Operation(s):"/>
+        <CheckBox fx:id="checkReports" text="Check Reports" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <CheckBox fx:id="renameReports" text="Rename Reports" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    </HBox>
+    <HBox GridPane.rowIndex="2" spacing="5">
+        <Text text="Expected Number of Reports: " GridPane.columnIndex="0"/>
+        <TextField fx:id="expectedReports" GridPane.columnIndex="1" maxWidth="70"/>
+    </HBox>
+    <HBox GridPane.rowIndex="3">
+        <Text text="Reports Location: "/>
+        <TextField fx:id="inputDirectory" minWidth="400" GridPane.columnIndex="0"/>
+        <Button fx:id="browseInput" text="Browse" GridPane.columnIndex="1" onAction="#openInput"  minWidth="60"/>
+    </HBox>
+    <HBox GridPane.rowIndex="4">
+        <Text text="Output Location: "/>
+        <TextField fx:id="outputDirectory" minWidth="400" GridPane.columnIndex="0"/>
+        <Button fx:id="browseOutput" text="Browse" GridPane.columnIndex="1" onAction="#openOutput" minWidth="60"/>
+    </HBox>
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Button fx:id="submitButton" mnemonicParsing="false" alignment="CENTER"
+                onAction="#onSubmitPressed" prefHeight="30.0" minWidth="130.0"
+                text="Run Operations" textAlignment="center"/>
+    </HBox>
+</GridPane>
